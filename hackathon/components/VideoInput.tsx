@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from "axios";
 
 type Props = {};
 
@@ -32,11 +33,29 @@ const VideoInput: React.FC<Props> = () => {
         }
     };
 
-    const handleVideoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleVideoChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files ? event.target.files[0] : null;
-        setVideoFile(file);
-    };
+        if (file) {
+            setVideoFile(file);
+            try {
+                const formData = new FormData();
+                formData.append("video", file);
 
+                // Replace with your API endpoint where you want to send the video
+                const response = await axios.post("http://example.com/upload", formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                });
+
+                console.log(response.data);
+                // Handle the response accordingly
+            } catch (error) {
+                console.error("Error uploading the file", error);
+                // Handle the error accordingly
+            }
+        }
+    };
     return (
         <div
             className={`w-full h-1/2 rounded border-2 ${dragging ? 'border-blue-500' : 'border-gray-400'} border-dashed p-4 flex flex-col items-center justify-evenly relative`}
