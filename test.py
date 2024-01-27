@@ -4,8 +4,8 @@ from modules.extractor import extractor
 import json
 
 
-file_path = "C:\\Users\\musya\\Videos\\mohirdev.mp4"
+file_path = "C:\\Users\\musya\\Videos\\amateur_video.mp4"
 print(file_path)
-hello = extractor(file_path)
+hello = mohirAI(file_path)
 
 print(hello)
