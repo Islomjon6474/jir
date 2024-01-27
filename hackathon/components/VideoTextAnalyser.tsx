@@ -16,7 +16,7 @@ const VideoTextAnalyzer: React.FC<Props> = ({ fullText, suspectedWords }) => {
     const highlightedText = highlightText(fullText, suspectedWords);
 
     return (
-        <div className="space-y-4">
+        <div className="space-y-4 w-full">
             <div className="p-4 border rounded shadow">
                 <h2 className="text-lg font-semibold mb-2">Full Text</h2>
                 <p dangerouslySetInnerHTML={{ __html: highlightedText }}></p>
