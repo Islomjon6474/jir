@@ -1,10 +1,14 @@
 import gradio as gr
+from modules.extractor import extractor
+
 
 # This function takes a video file and returns the same video.
 # Replace the content of this function with your video processing logic.
 def process_video(input_video):
+    extracted_data = extractor(input_video)
     # Process the video as needed
-    output_video = input_video  # This is a placeholder for your processing logic
+    output_video = extracted_data["sus_file_path"]  # This is a placeholder for your processing logic
+    
     return output_video
 
 # Define the Gradio interface
