@@ -27,6 +27,11 @@ h2, label {
     border-radius: 10px;
 }
 
+#component-12 {
+    border: 2px solid #4a7bff !important;
+    border-radius: 10px !important;
+    background-color: #4a7bff !important;
+}
 
 #logo {
     width: 100px; /* or the size you prefer */
@@ -73,7 +78,7 @@ demo = gr.Interface(
         gr.Textbox(label="Group of Words")
     ],
     css=custom_css,
-    title="Video Processing Demo",
+    title="Corruption Detector",
     description=logo_html  # Add your logo as part of the description
 )
 
