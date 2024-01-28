@@ -1,2 +1,2 @@
 
-words_array = ["pul", "kerak", "kelishaylik", "rozi", "qilish", "qilaman", "nima bu", "nima qilyapsiz", "bu nima", "pora", "qog'oz", "ko'kat", "chekkaroqqa o'taylik", "gaplashvoling", "sizni so'rashvotti", "poraolmayman"]
+words_array = ["pul", "kelishaylik", "rozi", "nima qilyapsiz", "pora", "qog'oz", "ko'kat", "poraolmayman"]

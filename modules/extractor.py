@@ -1,6 +1,9 @@
 from modules.mp4_to_mp3_module import mp3Converter
 from modules.mohir_ai_api_module import mohirAI
+from modules.word_similarity_check import word_similarity_check
 from modules.words_array import words_array
+
+
 import jiwer
 import subprocess
 import os
@@ -63,7 +66,6 @@ def extractor(file_path):
 
     # Preparing variables to store suspected phrase and found suspected words
     sus_words = []
-    start_index, end_index = 0, 0
     sus_word_found = False
 
     # Initialize an array to store words between start and end timestamps
@@ -74,7 +76,7 @@ def extractor(file_path):
         word = offset["word"]
         if(sus_word_found):
             sus_temp_bank.append(word)
-        if word in words_array:
+        if word_similarity_check(word, words_array, threshold=0.8):
             sus_word_found = True
             sus_words.append(word)
             start = offset["start"]

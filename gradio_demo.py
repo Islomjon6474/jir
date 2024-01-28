@@ -39,7 +39,7 @@ demo = gr.Interface(
     ],
     css=custom_css  # Apply your custom CSS here
 )# Launch the Gradio app
-demo.launch()
+demo.launch(share=False)
 
 
 # def process_video(input_video):
