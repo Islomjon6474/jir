@@ -26,7 +26,7 @@ def process_video(input_video):
     print(extracted_data)
     print(output_video)
 
-    return output_video, extracted_data["sus_line"], extracted_data["sus_words"],
+    return output_video, extracted_data["text"], extracted_data["sus_line"],
 
 # Define the Gradio interface
 demo = gr.Interface(
@@ -39,7 +39,7 @@ demo = gr.Interface(
     ],
     css=custom_css  # Apply your custom CSS here
 )# Launch the Gradio app
-demo.launch(share=False)
+demo.launch(share=True)
 
 
 # def process_video(input_video):
