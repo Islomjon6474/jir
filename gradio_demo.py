@@ -9,7 +9,7 @@ def image_to_base64(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode('utf-8')
 
-base64_string = image_to_base64("C:/Hackathon/images/logo.png")
+base64_string = image_to_base64("./images/logo.png")
 
 
 # This function takes a video file and returns the same video.
@@ -78,7 +78,7 @@ demo = gr.Interface(
         gr.Textbox(label="Group of Words")
     ],
     css=custom_css,
-    title="Corruption Detector",
+    title="Automative Bribe Detection Service (AB-DS)",
     description=logo_html  # Add your logo as part of the description
 )
 
