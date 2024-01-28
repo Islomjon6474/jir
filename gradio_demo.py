@@ -21,8 +21,24 @@ h2, label {
 def process_video(input_video):
     extracted_data = extractor(input_video)
     # Process the video as needed
-    output_video = extracted_data["sus_file_path"]  # This is a placeholder for your processing logic
-    
+    # Check if the extraction was successful and if the output data is valid
+    if not extracted_data or not extracted_data["sus_file_path"]:
+        # Return a message indicating no valid output was found
+        error_message = "No video found."
+        return None, error_message, error_message
+
+    output_video = extracted_data["sus_file_path"]
+
+    if not extracted_data or not extracted_data["sus_line"]:
+        # Return a message indicating no valid output was found
+        error_message = "There is no text found."
+        return output_video, error_message, error_message
+
+    if not extracted_data or not extracted_data["sus_words"]:
+        # Return a message indicating no valid output was found
+        error_message = "There is no suspect for corruption found."
+        return output_video, error_message, error_message
+
     print(extracted_data)
     print(output_video)
 
